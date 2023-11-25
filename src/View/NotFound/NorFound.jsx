@@ -1,9 +1,10 @@
+import EcLayout from "../../Components/EcLayout/EcLayout"
 
 function NotFound() {
     return(
-        <div className="bg-red-300">
-            NotFound
-        </div>
+        <EcLayout>
+            <p>404 - Not Found</p>
+        </EcLayout>
     )
 }
 
