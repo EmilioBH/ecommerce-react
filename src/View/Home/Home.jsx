@@ -1,9 +1,10 @@
+import EcLayout from "../../Components/EcLayout/EcLayout"
 
 function Home() {
     return(
-        <div className="bg-red-300">
+        <EcLayout>
             <p>Home</p>
-        </div>
+        </EcLayout>
     )
 }
 
