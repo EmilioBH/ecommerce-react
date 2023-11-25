@@ -1,11 +1,11 @@
-import EcLayout from "../../Components/EcLayout/EcLayout"
+import EcLayout from '../../Components/EcLayout/EcLayout'
 
 function MyOrder() {
-    return(
-        <EcLayout>
-            <p>MyOrder</p>
-        </EcLayout>
-    )
+  return (
+    <EcLayout>
+      <p>MyOrder</p>
+    </EcLayout>
+  )
 }
 
 export default MyOrder
