@@ -1,16 +1,19 @@
 import { BrowserRouter } from 'react-router-dom'
+import { ShoppingCartProvider } from '../../Context'
 
-import { AppRoutes } from '../../routes'
 import EcNavBar from '../../Components/EcNavBar/EcNavBar'
+import { AppRoutes } from '../../routes'
 
 import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
-      <EcNavBar />
-      <AppRoutes />
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <EcNavBar />
+        <AppRoutes />
+      </BrowserRouter>
+    </ShoppingCartProvider>
   )
 }
 
