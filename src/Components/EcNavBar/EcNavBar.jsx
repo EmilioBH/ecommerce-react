@@ -82,8 +82,9 @@ function EcNavBar() {
             My Account
           </NavLink>
         </li>
-        <li>
-          <ShoppingBagIcon className="h-6 w-6 text-black" /> {context.counter}
+        <li className="flex">
+          <ShoppingBagIcon className="h-5 w-5 text-black" />
+          <div>{context.counter}</div>
         </li>
       </ul>
     </nav>
