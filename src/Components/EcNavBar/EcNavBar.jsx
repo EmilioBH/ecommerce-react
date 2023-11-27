@@ -2,12 +2,14 @@ import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ShoppingCartContext } from '../../Context'
 
+import { ShoppingBagIcon } from '@heroicons/react/24/outline'
+
 function EcNavBar() {
   const activeStyle = 'underline underline-offset-4'
   const context = useContext(ShoppingCartContext)
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
+    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white/90">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
           <NavLink to="/">ReactCommerce</NavLink>
@@ -80,7 +82,9 @@ function EcNavBar() {
             My Account
           </NavLink>
         </li>
-        <li>🛒 {context.counter}</li>
+        <li>
+          <ShoppingBagIcon className="h-6 w-6 text-black" /> {context.counter}
+        </li>
       </ul>
     </nav>
   )
