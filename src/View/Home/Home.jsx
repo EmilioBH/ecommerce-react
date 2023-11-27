@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import EcCard from '../../Components/EcCard/EcCard'
 import EcLayout from '../../Components/EcLayout/EcLayout'
+import EcProductDetail from '../../Components/EcProductDetail/EcProductDetail'
 
 function Home() {
   const [items, setItems] = useState(null)
@@ -20,6 +21,7 @@ function Home() {
           <EcCard key={item.id} data={item} />
         ))}
       </div>
+      <EcProductDetail />
     </EcLayout>
   )
 }

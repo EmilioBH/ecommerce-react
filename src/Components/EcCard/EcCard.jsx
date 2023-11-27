@@ -1,4 +1,6 @@
 import React, { useContext } from 'react'
+
+import { PlusIcon } from '@heroicons/react/24/outline'
 import { ShoppingCartContext } from '../../Context'
 
 function EcCard({ data }) {
@@ -19,7 +21,7 @@ function EcCard({ data }) {
           className="absolute front-medium top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
           onClick={() => context.setCounter(context.counter + 1)}
         >
-          +
+          <PlusIcon className="h-6 w-6 text-black" />
         </div>
       </figure>
       <p className="flex justify-between">
