@@ -5,9 +5,14 @@ export const ShoppingCartContext = createContext()
 export const ShoppingCartProvider = ({ children }) => {
   const [counter, setCounter] = useState(0)
   const [isProductDetailOpen, setisProductDetailOpen] = useState(false)
+  const [productToShow, setProductToShow] = useState({
+    title: '',
+    price: '',
+    description: '',
+    images: [],
+  })
 
   const openProductDetail = () => setisProductDetailOpen(true)
-
   const closeProductDetail = () => setisProductDetailOpen(false)
 
   return (
@@ -18,6 +23,8 @@ export const ShoppingCartProvider = ({ children }) => {
         openProductDetail,
         closeProductDetail,
         isProductDetailOpen,
+        productToShow,
+        setProductToShow,
       }}
     >
       {children}
