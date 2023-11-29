@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
+import EcSideMenu from '../../Components/EcSideMenu/EcSideMenu'
 import { ShoppingCartProvider } from '../../Context'
 
 import EcNavBar from '../../Components/EcNavBar/EcNavBar'
@@ -11,6 +12,7 @@ function App() {
     <ShoppingCartProvider>
       <BrowserRouter>
         <EcNavBar />
+        <EcSideMenu />
         <AppRoutes />
       </BrowserRouter>
     </ShoppingCartProvider>
