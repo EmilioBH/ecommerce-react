@@ -23,7 +23,7 @@ function EcSideMenu() {
           className="h-6 w-6 text-black cursor-pointer"
         />
       </div>
-      <div className="px-6">
+      <div className="px-6 overflow-y-scroll">
         {context.cartProducts.map((prod) => (
           <EcOrderCard
             key={prod.id}
