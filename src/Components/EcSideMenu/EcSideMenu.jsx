@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import { ShoppingCartContext } from '../../Context'
 import { totalPrice } from '../../Utils'
@@ -62,12 +63,14 @@ function EcSideMenu() {
             $ {totalPrice(context.cartProducts)}
           </span>
         </p>
-        <button
-          className="w-full bg-black py-3 text-white rounded-lg"
-          onClick={() => handleCheckout()}
-        >
-          Checkout
-        </button>
+        <Link to="/my-orders/last">
+          <button
+            className="w-full bg-black py-3 text-white rounded-lg"
+            onClick={() => handleCheckout()}
+          >
+            Checkout
+          </button>
+        </Link>
       </div>
     </aside>
   )
