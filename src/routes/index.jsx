@@ -8,14 +8,15 @@ import NotFound from '../View/NotFound/NorFound'
 import SignIn from '../View/SignIn/SignIn'
 
 export const AppRoutes = () => {
-    const routes = useRoutes([
-      { path: '/', element: <Home /> },
-      { path: '/my-account', element: <MyAccount /> },
-      { path: '/my-orders', element: <MyOrder /> },
-      { path: '/my-order', element: <MyOrders /> },
-      { path: '/sign-in', element: <SignIn /> },
-      { path: '/*', element: <NotFound /> },
-    ])
-  
-    return routes
-  }
+  const routes = useRoutes([
+    { path: '/', element: <Home /> },
+    { path: '/my-account', element: <MyAccount /> },
+    { path: '/my-order', element: <MyOrder /> },
+    { path: '/my-orders', element: <MyOrders /> },
+    { path: '/my-orders/last', element: <MyOrder /> },
+    { path: '/sign-in', element: <SignIn /> },
+    { path: '/*', element: <NotFound /> },
+  ])
+
+  return routes
+}
