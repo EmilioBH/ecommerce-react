@@ -10,6 +10,13 @@ import './EcSideMenu.css'
 function EcSideMenu() {
   const context = useContext(ShoppingCartContext)
 
+  const handleDelete = (id) => {
+    const filteredProducts = context.cartProducts.filter(
+      (prod) => prod.id !== id
+    )
+    context.setCartProducts(filteredProducts)
+  }
+
   return (
     <aside
       className={` ${
@@ -27,9 +34,11 @@ function EcSideMenu() {
         {context.cartProducts.map((prod) => (
           <EcOrderCard
             key={prod.id}
+            id={prod.id}
             title={prod.title}
             imageUrl={prod.images[0]}
             price={prod.price}
+            handleDelete={handleDelete}
           />
         ))}
       </div>

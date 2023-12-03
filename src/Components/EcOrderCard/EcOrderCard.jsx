@@ -1,7 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 function EcOrderCard(props) {
-  const { title, imageUrl, price } = props
+  const { id, title, imageUrl, price, handleDelete } = props
 
   return (
     <div className="flex justify-between items-center mb-3">
@@ -16,8 +16,11 @@ function EcOrderCard(props) {
         <p className="text-sm font-light">{title}</p>
       </div>
       <div className="flex items-center gap-2">
-        <p className="text-lg font-medium">{price}</p>
-        <XMarkIcon className="h-6 w-6 text-black cursor-pointer" />
+        <p className="text-lg font-medium">${price}</p>
+        <XMarkIcon
+          className="h-6 w-6 text-black cursor-pointer"
+          onClick={() => handleDelete(id)}
+        />
       </div>
     </div>
   )
