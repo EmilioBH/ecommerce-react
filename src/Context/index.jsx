@@ -13,6 +13,7 @@ export const ShoppingCartProvider = ({ children }) => {
   })
   const [cartProducts, setCartProducts] = useState([])
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+  const [order, setOrder] = useState([])
 
   const openProductDetail = () => setisProductDetailOpen(true)
   const closeProductDetail = () => setisProductDetailOpen(false)
@@ -35,6 +36,8 @@ export const ShoppingCartProvider = ({ children }) => {
         isSideMenuOpen,
         openSideMenu,
         closeSideMenu,
+        order,
+        setOrder,
       }}
     >
       {children}
