@@ -1,26 +1,49 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
 
 import EcCard from '../../Components/EcCard/EcCard'
 import EcLayout from '../../Components/EcLayout/EcLayout'
 import EcProductDetail from '../../Components/EcProductDetail/EcProductDetail'
+import { ShoppingCartContext } from '../../Context'
 
 function Home() {
-  const [items, setItems] = useState(null)
+  const context = useContext(ShoppingCartContext)
 
-  useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
-      .then((response) => response.json())
-      .then((data) => setItems(data))
-  }, [])
+  const renderView = () => {
+    if (context.searchByTitle?.length > 0) {
+      if (context.filteredItems?.length > 0) {
+        return (
+          <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+            {context.filteredItems?.map((item) => (
+              <EcCard key={item.id} data={item} />
+            ))}
+          </div>
+        )
+      } else {
+        return <h1>We don't have any coincidence to show you.</h1>
+      }
+    } else {
+      return (
+        <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+          {context.items?.map((item) => (
+            <EcCard key={item.id} data={item} />
+          ))}
+        </div>
+      )
+    }
+  }
 
   return (
     <EcLayout>
-      <p>Home</p>
-      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
-        {items?.map((item) => (
-          <EcCard key={item.id} data={item} />
-        ))}
+      <div className="flex items-center justify-center relative w-80 mb-4">
+        <h1 className="font-medium text-xl">Exclusive Products</h1>
       </div>
+      <input
+        type="text"
+        placeholder="Search a product..."
+        className="rounded-lg border-black w-80 p-4 mb-4"
+        onChange={(event) => context.setSearchByTitle(event.target.value)}
+      />
+      {renderView()}
       <EcProductDetail />
     </EcLayout>
   )
