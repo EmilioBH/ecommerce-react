@@ -16,7 +16,8 @@ function EcNavBar() {
         </li>
         <li>
           <NavLink
-            to="/all"
+            to="/"
+            onClick={() => context.setSearchByCategory()}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -25,6 +26,7 @@ function EcNavBar() {
         <li>
           <NavLink
             to="/clothes"
+            onClick={() => context.setSearchByCategory('clothes')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Clothes
@@ -33,6 +35,7 @@ function EcNavBar() {
         <li>
           <NavLink
             to="/electronics"
+            onClick={() => context.setSearchByCategory('electronics')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Electronics
@@ -41,6 +44,7 @@ function EcNavBar() {
         <li>
           <NavLink
             to="/furnitures"
+            onClick={() => context.setSearchByCategory('furnitures')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Furnitures
@@ -49,6 +53,7 @@ function EcNavBar() {
         <li>
           <NavLink
             to="/toys"
+            onClick={() => context.setSearchByCategory('toys')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Toys
@@ -57,6 +62,7 @@ function EcNavBar() {
         <li>
           <NavLink
             to="/others"
+            onClick={() => context.setSearchByCategory('others')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Others
@@ -84,7 +90,7 @@ function EcNavBar() {
         </li>
         <li className="flex">
           <ShoppingBagIcon className="h-5 w-5 text-black" />
-          <div>{context.counter}</div>
+          <div>{context.cartProducts.length}</div>
         </li>
       </ul>
     </nav>
