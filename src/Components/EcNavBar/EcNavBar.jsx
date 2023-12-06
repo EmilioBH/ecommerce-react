@@ -89,7 +89,10 @@ function EcNavBar() {
           </NavLink>
         </li>
         <li className="flex">
-          <ShoppingBagIcon className="h-5 w-5 text-black" />
+          <ShoppingBagIcon
+            className="h-5 w-5 text-black"
+            onClick={() => context.openSideMenu()}
+          />
           <div>{context.cartProducts.length}</div>
         </li>
       </ul>

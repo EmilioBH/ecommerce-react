@@ -13,7 +13,6 @@ function EcCard({ data }) {
 
   const addProductToCart = (event, productData) => {
     event.stopPropagation()
-    context.setCounter(context.counter + 1)
     context.setCartProducts([...context.cartProducts, productData])
     context.openSideMenu()
     context.closeProductDetail()

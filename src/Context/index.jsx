@@ -3,7 +3,6 @@ import { createContext, useEffect, useState } from 'react'
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({ children }) => {
-  const [counter, setCounter] = useState(0)
   const [isProductDetailOpen, setisProductDetailOpen] = useState(false)
   const [productToShow, setProductToShow] = useState({
     title: '',
@@ -86,8 +85,6 @@ export const ShoppingCartProvider = ({ children }) => {
   return (
     <ShoppingCartContext.Provider
       value={{
-        counter,
-        setCounter,
         openProductDetail,
         closeProductDetail,
         isProductDetailOpen,
