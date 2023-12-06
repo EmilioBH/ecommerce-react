@@ -9,26 +9,16 @@ function Home() {
   const context = useContext(ShoppingCartContext)
 
   const renderView = () => {
-    if (context.searchByTitle?.length > 0) {
-      if (context.filteredItems?.length > 0) {
-        return (
-          <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
-            {context.filteredItems?.map((item) => (
-              <EcCard key={item.id} data={item} />
-            ))}
-          </div>
-        )
-      } else {
-        return <h1>We don't have any coincidence to show you.</h1>
-      }
-    } else {
+    if (context.filteredItems?.length > 0) {
       return (
         <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
-          {context.items?.map((item) => (
+          {context.filteredItems?.map((item) => (
             <EcCard key={item.id} data={item} />
           ))}
         </div>
       )
+    } else {
+      return <h1>We don't have any coincidence to show you.</h1>
     }
   }
 

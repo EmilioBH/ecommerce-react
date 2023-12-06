@@ -5,8 +5,6 @@ import { ShoppingCartProvider } from '../../Context'
 import EcNavBar from '../../Components/EcNavBar/EcNavBar'
 import { AppRoutes } from '../../routes'
 
-import './App.css'
-
 function App() {
   return (
     <ShoppingCartProvider>
